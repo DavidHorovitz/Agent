@@ -1,5 +1,9 @@
+
+from model.status import Status
+
+
 class Agent:
-    def __init__(self, id,codeName , realName, location, status, missionsCompleted):
+    def __init__(self, id,codeName , realName, location, status:Status, missionsCompleted):
         self.id=id
         self.codeName=codeName
         self.realName=realName
