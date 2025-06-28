@@ -1,10 +1,14 @@
 import mysql.connector
+
+from model.status import Status
+
+
 class Dal:
     def __init__(self):
         self.mydb = mysql.connector.connect(host="127.0.0.1",user="root",password="",database="eagleeyedb")
         self.mycursor =self.mydb.cursor()
 
-    def insert(self,id,codeName, realName, location, missionsCompleted, status):
+    def insert(self,id,codeName, realName, location, missionsCompleted, status:Status):
 
         sql = f"INSERT INTO `agents`(`id`, `codeName`, `realName`, `location`, `missionsCompleted`, `status`) VALUES ('{id}','{codeName}','{realName}','{location}','{missionsCompleted}','{status}')"
 
@@ -33,7 +37,7 @@ class Dal:
 
 
 start_dal= Dal()
-# start_dal.insert(8,"sss","ron","home",3,"Active")
+start_dal.insert(12,"eee","bar","car",4,"Acti")
 # start_dal.select('realName')
 # start_dal.update("realName","rt","eli")
 # start_dal.delete(1)
